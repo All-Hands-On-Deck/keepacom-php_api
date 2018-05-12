@@ -326,4 +326,10 @@ class Product
      * @var string[]|null
      */
     public $eanList = null;
+
+    /**
+     * Description of the product.
+     * @var string |null;
+    */
+    public $description = null;
 }
