@@ -92,4 +92,23 @@ class Stats
      * @var mixed int[][]
      */
     public $outOfStockPercentageInInterval = null;
+
+    /**
+     * Active offer product list price
+     * @var int|null
+     */
+    public $buyBoxPrice = 0;
+
+    /**
+     * Active offer product shipping price
+     * @var int|null
+     */
+    public $buyBoxShipping = 0;
+
+    /**
+     * To be used to compare offer lastSeen parameter
+     * @var int|null
+     */
+    public $lastOffersUpdate = 0;
+
 }
