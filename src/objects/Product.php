@@ -338,4 +338,10 @@ class Product
      * @var mixed | null
      */
     public $categoryTree = null;
+
+    /**
+     * Array of live offers
+     * @var int[]|null
+     */
+    public $liveOffersOrder = null;
 }
