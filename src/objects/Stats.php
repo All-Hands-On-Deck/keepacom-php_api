@@ -111,4 +111,16 @@ class Stats
      */
     public $lastOffersUpdate = 0;
 
+    /**
+     * Contains the total stock available per item condition (of the retrieved offers) for 3rd party FBA
+     * @var int[]|null
+     */
+    public $stockPerCondition3rdFBA = null;
+
+    /**
+     * Contains the total stock available per item condition (of the retrieved offers) for FBM
+     * @var int[]|null
+     */
+    public $stockPerConditionFBM = null;
+
 }
