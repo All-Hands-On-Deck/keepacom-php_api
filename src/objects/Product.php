@@ -329,13 +329,13 @@ class Product
 
     /**
      * Description of the product.
-     * @var string |null;
+     * @var string|null
      */
     public $description = null;
 
     /**
      * List of Categories that the product belongs to
-     * @var mixed | null
+     * @var mixed|null
      */
     public $categoryTree = null;
 
