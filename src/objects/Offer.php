@@ -152,4 +152,15 @@ class Offer
      * @var int[]
      */
     public $stockCSV;
+
+    /**
+     * @var bool|null
+     */
+    public $isCustomizeable = null;
+
+    /**
+     * Whether or not this offer is fulfilled by Amazon.
+     * @var bool|null
+     */
+    public $isFBA = null;
 }
