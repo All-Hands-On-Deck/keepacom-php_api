@@ -5,7 +5,6 @@ use Keepa\KeepaAPI;
 
 class Product
 {
-
     /**
      * The ASIN of the product
      * @var string

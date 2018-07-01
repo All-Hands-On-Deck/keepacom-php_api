@@ -43,6 +43,19 @@ class Stats
     public $avg90 = null;
 
     /**
+     * Contains the weighted mean for the last 180 days.<br>
+     * <p>Uses {@link Product.CSVType} indexing.</p>
+     * If no offer was available in the given interval or there is insufficient data it has the value -1.
+     * @var int[]|null
+     */
+    public $avg180 = null;
+
+    /**
+     * @var int[]|null
+     */
+    public $atIntervalStart = null;
+
+    /**
      * Contains the lowest prices registered for this product. <br>
      * First dimension uses {@link Product.CSVType} indexing <br>
      * Second dimension is either null, if there is no data available for the price type, or
@@ -94,6 +107,27 @@ class Stats
     public $outOfStockPercentageInInterval = null;
 
     /**
+     * @var mixed int[][]
+     */
+    public $outOfStockPercentage90 = null;
+
+    /**
+     * the total count of offers this product has (all conditions combined). The offer count per condition can be found in the current field.
+     * @var int|null
+     */
+    public $totalOfferCount = 0;
+
+    /**
+     * @var int|null
+     */
+    public $retrievedOfferCount = 0;
+
+    /**
+     * @var int|null
+     */
+    public $tradeInPrice = -1;
+
+    /**
      * Active offer product list price
      * @var int|null
      */
@@ -123,4 +157,62 @@ class Stats
      */
     public $stockPerConditionFBM = null;
 
+    /**
+     * stockAmazon: the stock of Amazon, if Amazon has an offer. Max. reported stock is 10. Otherwise -2.
+     * @var int|null
+     */
+    public $stockAmazon = 0;
+
+    /**
+     * stockBuyBox: the stock of buy box offer. Max. reported stock is 10. If the boy box is empty/unqualified: -2.
+     * @var int|null
+     */
+    public $stockBuyBox = 0;
+
+    /**
+     * buyBoxIsUnqualified: whether or not a seller won the buy box. If there are only sellers with bad offers none qualifies for the buy box.
+     * @var bool|null
+     */
+    public $buyBoxIsUnqualified = false;
+
+    /**
+     * buyBoxIsShippable: whether or not the buy box is listed as being shippable.
+     * @var bool|null
+     */
+    public $buyBoxIsShippable = false;
+
+    /**
+     * buyBoxIsPreorder: if the buy box is a pre-order
+     * @var bool|null
+     */
+    public $buyBoxIsPreorder = false;
+
+    /**
+     * buyBoxIsFBA: whether or not the buy box is fulfilled by Amazon
+     * @var bool|null
+     */
+    public $buyBoxIsFBA = false;
+
+    /**
+     * buyBoxIsAmazon: if Amazon is the seller in the buy box
+     * @var bool|null
+     */
+    public $buyBoxIsAmazon = false;
+
+    /**
+     * buyBoxIsMAP: if the buy box price is hidden on Amazon due to MAP restrictions (minimum advertised price)
+     * @var bool|null
+     */
+    public $buyBoxIsMAP = false;
+
+    /**
+     * isAddonItem: if the product is an add-on item (add-on Items ship with orders that include $25 or more of items shipped by Amazon)
+     * @var bool|null
+     */
+    public $isAddonItem = false;
+
+    /**
+     * @var mixed|null
+     */
+    public $lightningDealInfo = null;
 }
