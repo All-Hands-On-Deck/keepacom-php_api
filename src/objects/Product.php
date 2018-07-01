@@ -344,4 +344,100 @@ class Product
      * @var int[]|null
      */
     public $liveOffersOrder = null;
+
+    /**
+     * The item’s author. null if not available.
+     * @var string|null
+     */
+    public $author = null;
+
+    /**
+     * The item’s binding. null if not available. If the item is not a book it is usually the product category instead.
+     * @var string|null
+     */
+    public $binding = null;
+
+    /**
+     * The number of items of this product. -1 if not available.
+     * @var int
+     */
+    public $numberOfItems = -1;
+
+    /**
+     * The number of pages of this product. -1 if not available.
+     * @var int
+     */
+    public $numberOfPages = -1;
+
+    /**
+     * The item’s publication date in one of the following three formats:
+     * YYYY or YYYYMM or YYYYMMDD (Y= year, M = month, D = day)
+     * -1 if not available.
+     * Examples:
+     * 1978 = the year 1978
+     * 200301 = January 2003
+     * 20150409 = April 9th, 2015
+     * @var int
+     */
+    public $publicationDate = -1;
+
+    /**
+     * The item’s release date. Same format as publicationDate. -1 if not available.
+     * @var int
+     */
+    public $releaseDate = -1;
+
+    /**
+     * An item can have one or more languages. Each language entry has a name and a type. Some also have an audio format. null if not available.
+     * Examples:
+     * [ [ “English”, “Published” ], [ “English”, “Original Language” ] ]
+     * With audio format:
+     * [ [ “Englisch”, “Originalsprache”, “DTS-HD 2.0” ], [ “Deutsch”, null, “DTS-HD 2.0” ] ]
+     * @var string[]|null
+     */
+    public $languages = null;
+
+    /**
+     * A list of the product features / bullet points. null if not available. An entry can contain HTML markup in rare cases. We currently limit each entry to a maximum of 1000 characters (if the feature is longer it will be cut off). This limitation may change in the future without prior notice.
+     * Example:
+     * [ “6 Universal outlets, 6 ft in Length”, “Will accept most of the plug types from around the world!”, … ],
+     * @var string[]|null
+     */
+    public $features = null;
+
+    /**
+     * A coded hazardous material type of the item. null if not available. We use the following encoding:
+     * 0 - ORM-D Class
+     * 1 - ORM-D Class 1
+     * 2 - ORM-D Class 2
+     * 3 - ORM-D Class 3
+     * 4 - ORM-D Class 4
+     * 5 - ORM-D Class 5
+     * 6 - ORM-D Class 6
+     * 7 - ORM-D Class 7
+     * 8 - ORM-D Class 8
+     * 9 - ORM-D Class 9
+     * 10 - Butane
+     * 11 - Fuel cell
+     * 12 - Gasoline
+     * 13 - Sealed Lead Acid Battery
+     * @var int|null
+     */
+    public $hazardousMaterialType = null;
+
+    /**
+     * Whether or not the lowest new price (either price type AMAZON or NEW) is restricted by MAP (Minimum Advertised Price). Use this to differentiate out of stock (price = -1) vs. MAP restriction.
+     * @var bool
+     */
+    public $newPriceIsMAP = false;
+
+    /**
+     * Contains coupon details if any are available for the product. null if not available.
+Integer array with always two entries: The first entry is the discount of a one time coupon, the second is a subscribe and save coupon. Entry value is either 0 if no coupon of that type is offered, positive for an absolute discount or negative for a percentage discount. The coupons field is always accessible, but only updated if the offers parameter was used in the Product Request.
+Example:
+     * [ 200, -15 ] - Both coupon types available: $2 one time discount or 15% for subscribe and save.
+     * [ -7, 0 ] - Only one time coupon type is available offering a 7% discount.
+     * @var int[]|null
+     */
+    public $coupon = null;
 }
