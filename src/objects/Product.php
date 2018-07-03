@@ -392,7 +392,7 @@ class Product
      * [ [ “English”, “Published” ], [ “English”, “Original Language” ] ]
      * With audio format:
      * [ [ “Englisch”, “Originalsprache”, “DTS-HD 2.0” ], [ “Deutsch”, null, “DTS-HD 2.0” ] ]
-     * @var string[]|null
+     * @var mixed|null
      */
     public $languages = null;
 
