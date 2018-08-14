@@ -45,6 +45,23 @@ class Response
     public $requestTime = null;
 
     /**
+     * Tracking products through the API reduces your actual token refill rate by this value (rounded to an integer).
+     * @var float
+     */
+    public $tokenFlowReduction = null;
+
+    /**
+     * Number of tokens this request consumed.
+     * @var int
+     */
+    public $tokensConsumed = null;
+
+    /**
+     * @var int
+     */
+    public $processingTimeInMs = null;
+
+    /**
      * Status of the request.
      * @var int
      */
